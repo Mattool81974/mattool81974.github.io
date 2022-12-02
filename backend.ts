@@ -12,12 +12,15 @@ const handler = async (request: Request): Promise<Response> => {
       accept: "application/json",
     },
   });
+  console.log("Requête");
+  console.log(resp.body);
   return new Response(resp.body, {
     status: resp.status,
     headers: {
       "content-type": "application/json",
     },
   });
+
 };
 
 console.log("Listening on http://localhost:8000");
