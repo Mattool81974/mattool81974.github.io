@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.157.0/http/server.ts";
 
-const port = 8080;
+const port = 80;
 
 const handler = async (request: Request): Promise<Response> => {
   const resp = await fetch("https://api.github.com/users/denoland", {
