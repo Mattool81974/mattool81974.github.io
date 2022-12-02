@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.157.0/http/server.ts";
+import { copy } from "https://deno.land/std@0.167.0/streams/conversion.ts";
 
 const port = 80;
 
