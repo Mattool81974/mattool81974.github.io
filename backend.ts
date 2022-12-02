@@ -4,9 +4,11 @@ const port = 80;
 
 const handler = async (request: Request): Promise<Response> => {
   const resp = Deno.open("page.html");
+  let texte = "";
+  await copy(resp, texte);
   console.log("Requête");
-  console.log(resp);
-  return new Response(resp, {
+  console.log(texte);
+  return new Response(texte, {
     status: resp.status,
     
   });
