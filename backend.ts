@@ -1,12 +1,13 @@
 import { serve } from "https://deno.land/std@0.157.0/http/server.ts";
+import * as fs from "fs";
 
 const port = 80;
 
 const handler = async (request: Request): Promise<Response> => {
-  const resp = Deno.open("page.html");
+  const resp = fs.readFile("page.html");
   console.log("Requête");
-  console.log(resp.body);
-  return new Response(resp.body, {
+  console.log(resp);
+  return new Response(resp, {
     status: resp.status,
     
   });
